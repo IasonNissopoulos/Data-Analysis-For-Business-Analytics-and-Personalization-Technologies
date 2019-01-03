@@ -1,0 +1,13 @@
+order by 
+negatives
+duplicates
+age sex NULLS
+sex unknown
+marital status?
+HouseholdSize?
+Children when NULL -> 0
+delete row when NULL
+IDS gia pk
+STISIMO
+
+
