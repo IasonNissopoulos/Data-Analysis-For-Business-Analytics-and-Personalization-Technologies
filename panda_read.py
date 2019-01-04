@@ -11,8 +11,14 @@ df2 = pd.read_excel(xls, 'LOYALTY')
 df3 = pd.read_excel(xls, 'BARCODES')
 df4 = pd.read_excel(xls, 'Categories Hierarchy')
 
+
+
+
 #negatives
 df1 = df1[df1["Sum_Units"] >= 0]
+
+#NULL->0 
+df2['Children'] = df2['Children'].fillna(0)
 
 #changes above here
 writer = pd.ExcelWriter('POS DATA_BAPT.xlsx', engine='xlsxwriter')
