@@ -12,13 +12,15 @@ df3 = pd.read_excel(xls, 'BARCODES')
 df4 = pd.read_excel(xls, 'Categories Hierarchy')
 
 
-
-
 #negatives
 df1 = df1[df1["Sum_Units"] >= 0]
 
 #NULL->0 
 df2['Children'] = df2['Children'].fillna(0)
+#auta girnane pisw 6000 kati stoixeia pou exoun unknown
+#ama den ginete mporoume na tous dwsume random timi
+#a = df2[df2['Sex'] = 'Unknown']
+#a = df2.query('Sex=="Unknown"')['CardholderID']
 
 #changes above here
 writer = pd.ExcelWriter('POS DATA_BAPT.xlsx', engine='xlsxwriter')
