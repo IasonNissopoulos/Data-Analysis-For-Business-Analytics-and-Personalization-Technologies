@@ -5,7 +5,7 @@ age sex NULLS
 sex unknown
 marital status?
 HouseholdSize?
-Children when NULL -> 0
+Children when NULL -> 0 DONE
 delete row when NULL
 IDS gia pk
 STISIMO
