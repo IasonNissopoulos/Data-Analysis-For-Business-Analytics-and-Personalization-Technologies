@@ -13,14 +13,24 @@ df4 = pd.read_excel(xls, 'Categories Hierarchy')
 
 
 #negatives
-df1 = df1[df1["Sum_Units"] >= 0]
+#df1 = df1[df1["Sum_Units"] >= 0]
 
-#NULL->0 
-df2['Children'] = df2['Children'].fillna(0)
+#NULL->df2['Children'] = df2['Children'].fillna(0)
 #auta girnane pisw 6000 kati stoixeia pou exoun unknown
 #ama den ginete mporoume na tous dwsume random timi
-#a = df2[df2['Sex'] = 'Unknown']
-#a = df2.query('Sex=="Unknown"')['CardholderID']
+a = df2[df2['Sex'] == 'Unknown']
+b = list(a['CardholderID'].values.flatten()) 
+c = list(df1['Card_ID'].values.flatten())
+
+#count = 0
+
+dic = dict.fromkeys(b,0)
+print(len(dic))
+for i in c:
+   if i in dic.keys():
+      dic[i] += 1 
+print(dic)
+
 
 #changes above here
 writer = pd.ExcelWriter('POS DATA_BAPT.xlsx', engine='xlsxwriter')
